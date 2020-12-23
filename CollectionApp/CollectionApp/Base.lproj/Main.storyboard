@@ -69,12 +69,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-g5-oo4">
-                                <rect key="frame" x="20" y="66" width="92" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGN-ZH-H4T">
                                 <rect key="frame" x="312" y="61" width="82" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -85,14 +79,20 @@
                                     <action selector="createButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S6k-qN-0Xb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-g5-oo4">
+                                <rect key="frame" x="12" y="54" width="78" height="43"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGN-ZH-H4T" secondAttribute="trailing" constant="20" id="C3T-2t-yQa"/>
+                            <constraint firstItem="f0A-g5-oo4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="STC-PA-kXm"/>
                             <constraint firstItem="IGN-ZH-H4T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="Z4C-sM-ool"/>
-                            <constraint firstItem="f0A-g5-oo4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mcz-D3-Maj"/>
-                            <constraint firstItem="f0A-g5-oo4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="zGS-Px-Mi5"/>
+                            <constraint firstItem="f0A-g5-oo4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="t0r-JC-er8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -111,12 +111,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-7R-Vbp">
-                                <rect key="frame" x="20" y="64" width="63" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0S-h7-pIO">
                                 <rect key="frame" x="292" y="64" width="102" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -131,18 +125,23 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="796"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-Km-Ka9">
-                                        <rect key="frame" x="40" y="45" width="51" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <rect key="frame" x="40" y="45" width="51.5" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="an9-BR-xvD">
-                                        <rect key="frame" x="40" y="85" width="337" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="an9-BR-xvD" customClass="CustomUITextField" customModule="CollectionApp" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="90.5" width="337" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cte-qk-GZQ">
-                                        <rect key="frame" x="40" y="164" width="337" height="350"/>
+                                        <rect key="frame" x="40" y="169.5" width="337" height="350"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="350" id="4YA-nU-te0"/>
@@ -153,8 +152,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-n4-70d">
-                                        <rect key="frame" x="40" y="579" width="337" height="48"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <rect key="frame" x="40" y="584.5" width="337" height="55"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
                                         <state key="normal" title="Create">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
@@ -165,28 +164,34 @@
                                     <constraint firstItem="cte-qk-GZQ" firstAttribute="leading" secondItem="an9-BR-xvD" secondAttribute="leading" id="73Z-gA-KKF"/>
                                     <constraint firstItem="cte-qk-GZQ" firstAttribute="top" secondItem="an9-BR-xvD" secondAttribute="bottom" constant="45" id="7DL-da-MqP"/>
                                     <constraint firstItem="an9-BR-xvD" firstAttribute="leading" secondItem="vhe-Km-Ka9" secondAttribute="leading" id="ItF-9d-lIR"/>
+                                    <constraint firstItem="vhe-Km-Ka9" firstAttribute="top" secondItem="JOf-S2-a7W" secondAttribute="top" constant="45" id="Mb0-bw-E8E"/>
                                     <constraint firstItem="aDm-n4-70d" firstAttribute="trailing" secondItem="cte-qk-GZQ" secondAttribute="trailing" id="QT1-9G-Bvt"/>
                                     <constraint firstAttribute="trailing" secondItem="an9-BR-xvD" secondAttribute="trailing" constant="37" id="Snc-zd-y9y"/>
                                     <constraint firstItem="aDm-n4-70d" firstAttribute="leading" secondItem="cte-qk-GZQ" secondAttribute="leading" id="YNc-El-oh9"/>
-                                    <constraint firstItem="vhe-Km-Ka9" firstAttribute="top" secondItem="JOf-S2-a7W" secondAttribute="top" constant="45" id="Zqd-WG-GaN"/>
                                     <constraint firstItem="vhe-Km-Ka9" firstAttribute="leading" secondItem="JOf-S2-a7W" secondAttribute="leading" constant="40" id="py0-qZ-FrK"/>
                                     <constraint firstItem="cte-qk-GZQ" firstAttribute="trailing" secondItem="an9-BR-xvD" secondAttribute="trailing" id="qWy-q7-fBM"/>
                                     <constraint firstItem="an9-BR-xvD" firstAttribute="top" secondItem="vhe-Km-Ka9" secondAttribute="bottom" constant="10" id="sEr-8P-4dH"/>
                                     <constraint firstItem="aDm-n4-70d" firstAttribute="top" secondItem="cte-qk-GZQ" secondAttribute="bottom" constant="65" id="yNW-kt-FB1"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-7R-Vbp">
+                                <rect key="frame" x="20" y="54" width="64.5" height="47"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rY5-vB-1ti"/>
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="E8p-7R-Vbp" firstAttribute="top" secondItem="rY5-vB-1ti" secondAttribute="top" constant="10" id="6bI-PB-A78"/>
                             <constraint firstItem="JOf-S2-a7W" firstAttribute="trailing" secondItem="rY5-vB-1ti" secondAttribute="trailing" id="CZ7-4j-7k1"/>
-                            <constraint firstItem="JOf-S2-a7W" firstAttribute="top" secondItem="E8p-7R-Vbp" secondAttribute="bottom" id="Egh-Av-Rtf"/>
                             <constraint firstAttribute="bottom" secondItem="JOf-S2-a7W" secondAttribute="bottom" id="Krn-Xe-Tc9"/>
                             <constraint firstItem="rY5-vB-1ti" firstAttribute="trailing" secondItem="A0S-h7-pIO" secondAttribute="trailing" constant="20" id="LfR-Bj-7Qa"/>
                             <constraint firstItem="JOf-S2-a7W" firstAttribute="leading" secondItem="rY5-vB-1ti" secondAttribute="leading" id="MMi-X1-123"/>
+                            <constraint firstItem="E8p-7R-Vbp" firstAttribute="leading" secondItem="rY5-vB-1ti" secondAttribute="leading" constant="20" id="iaX-GM-MMX"/>
                             <constraint firstItem="A0S-h7-pIO" firstAttribute="top" secondItem="rY5-vB-1ti" secondAttribute="top" constant="20" id="lnh-M1-7co"/>
-                            <constraint firstItem="E8p-7R-Vbp" firstAttribute="leading" secondItem="rY5-vB-1ti" secondAttribute="leading" constant="20" id="sdM-8d-Jl0"/>
-                            <constraint firstItem="E8p-7R-Vbp" firstAttribute="top" secondItem="rY5-vB-1ti" secondAttribute="top" constant="20" id="z7A-Ww-Mk3"/>
+                            <constraint firstItem="JOf-S2-a7W" firstAttribute="top" secondItem="A0S-h7-pIO" secondAttribute="bottom" id="wiR-sv-IzW"/>
                         </constraints>
                     </view>
                 </viewController>

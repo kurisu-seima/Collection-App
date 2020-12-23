@@ -14,6 +14,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionTitleLabel: UILabel!
     
     let colorList: [UIColor] = [.purple, .yellow, .red, .systemPink, .systemIndigo, .blue, .darkGray, .yellow, .green, .brown]
+    
     var index: Int = 0
 
     func setUp() {

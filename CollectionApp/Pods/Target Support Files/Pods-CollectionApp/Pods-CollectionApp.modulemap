@@ -1,0 +1,6 @@
+framework module Pods_CollectionApp {
+  umbrella header "Pods-CollectionApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

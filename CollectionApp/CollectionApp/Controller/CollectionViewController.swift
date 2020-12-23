@@ -18,6 +18,12 @@ class CollectionViewController: UIViewController {
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
     }
+    
+    @IBAction func createButtonDidTapped(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "memoCreateVC") as! MemoCreateViewController
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
 }
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

@@ -8,27 +8,11 @@
 
 import UIKit
 
-@IBDesignable class CollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionSubtitleLabel: UILabel!
     @IBOutlet weak var collectionTitleLabel: UILabel!
-    
-//    @IBInspectable var borderColor: UIColor? {
-//        get {
-//            if let color = layer.borderColor {
-//                return UIColor(cgColor: color)
-//            }
-//            return nil
-//        }
-//        set {
-//            if let color = newValue {
-//                layer.borderColor = color.cgColor
-//            } else {
-//                layer.borderColor = nil
-//            }
-//        }
-//    }
-    
+  
     let colorList: [UIColor] = [.purple, .yellow, .red, .systemPink, .systemIndigo, .blue, .darkGray, .yellow, .green, .brown]
     
     var index: Int = 0
@@ -38,6 +22,7 @@ import UIKit
         collectionSubtitleLabel.text = "テキストテキストテキストテキストテキストテキスト"
         collectionSubtitleLabel.numberOfLines = 0
         self.layer.cornerRadius = 6
+        self.layer.borderWidth = 3
         self.contentView.backgroundColor = getBackgroundColor()
     }
     

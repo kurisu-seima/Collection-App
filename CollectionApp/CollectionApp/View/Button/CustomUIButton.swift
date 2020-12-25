@@ -15,9 +15,7 @@ import UIKit
     @IBInspectable var borderWidth: CGFloat = 0.0
     
     override func draw(_ rect: CGRect) {
-        
         self.layer.cornerRadius = cornerRadius
-        
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
         

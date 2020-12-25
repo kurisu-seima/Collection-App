@@ -173,6 +173,9 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="memoCreateButtonDidTapped:" destination="SiL-B3-tun" eventType="touchUpInside" id="flb-UM-6s6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86354527023503236" green="0.68064215965699393" blue="0.49370019279292265" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -210,6 +213,10 @@
                             <constraint firstItem="JOf-S2-a7W" firstAttribute="top" secondItem="A0S-h7-pIO" secondAttribute="bottom" id="wiR-sv-IzW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="cte-qk-GZQ" id="nuB-dO-VyM"/>
+                        <outlet property="titleTextField" destination="an9-BR-xvD" id="1Gl-ql-eTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qe-RG-TPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

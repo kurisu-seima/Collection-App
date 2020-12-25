@@ -8,10 +8,26 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+@IBDesignable class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionSubtitleLabel: UILabel!
     @IBOutlet weak var collectionTitleLabel: UILabel!
+    
+//    @IBInspectable var borderColor: UIColor? {
+//        get {
+//            if let color = layer.borderColor {
+//                return UIColor(cgColor: color)
+//            }
+//            return nil
+//        }
+//        set {
+//            if let color = newValue {
+//                layer.borderColor = color.cgColor
+//            } else {
+//                layer.borderColor = nil
+//            }
+//        }
+//    }
     
     let colorList: [UIColor] = [.purple, .yellow, .red, .systemPink, .systemIndigo, .blue, .darkGray, .yellow, .green, .brown]
     

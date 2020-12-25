@@ -50,6 +50,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33377AD725938E1C00492715 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ECEA39AD258651E7004C639A /* CollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		33377AD825938E3000492715 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				33377AD4259384DB00492715 /* CustomUIButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		A9C7DA415F587011002E0599 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +96,11 @@
 		ECEA39932586378B004C639A /* CollectionApp */ = {
 			isa = PBXGroup;
 			children = (
-				ECEA39942586378B004C639A /* AppDelegate.swift */,
-				ECEA39962586378B004C639A /* SceneDelegate.swift */,
 				ECEA39A8258637A1004C639A /* Model */,
 				ECEA39A9258637A9004C639A /* View */,
 				ECEA39AA258637B1004C639A /* Controller */,
+				ECEA39942586378B004C639A /* AppDelegate.swift */,
+				ECEA39962586378B004C639A /* SceneDelegate.swift */,
 				ECEA399A2586378B004C639A /* Main.storyboard */,
 				ECEA399F25863792004C639A /* LaunchScreen.storyboard */,
 				ECEA39A225863792004C639A /* Info.plist */,
@@ -103,8 +119,8 @@
 		ECEA39A9258637A9004C639A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ECEA39AD258651E7004C639A /* CollectionViewCell.swift */,
-				33377AD4259384DB00492715 /* CustomUIButton.swift */,
+				33377AD725938E1C00492715 /* Cell */,
+				33377AD825938E3000492715 /* Button */,
 				ECEA399D25863792004C639A /* Assets.xcassets */,
 			);
 			path = View;
@@ -156,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "星舞";
 				TargetAttributes = {
 					ECEA39902586378B004C639A = {
@@ -300,6 +316,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -360,6 +377,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

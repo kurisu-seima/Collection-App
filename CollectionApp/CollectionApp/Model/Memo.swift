@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Memo: Object {
+    @objc dynamic var title = ""
+    @objc dynamic var content = ""
+}

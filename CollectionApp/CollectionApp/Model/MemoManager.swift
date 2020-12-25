@@ -22,7 +22,7 @@ class MemoManager {
     
     private (set) var memos: Results<Memo>!
     
-    static func add(memo: Memo) {
+    func add(memo: Memo) {
         let realm = try! Realm()
         try! realm.write {
             realm.add(memo)

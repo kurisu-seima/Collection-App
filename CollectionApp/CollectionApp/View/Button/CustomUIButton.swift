@@ -18,7 +18,6 @@ import UIKit
         self.layer.cornerRadius = cornerRadius
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
-        
         super.draw(rect)
     }
 }

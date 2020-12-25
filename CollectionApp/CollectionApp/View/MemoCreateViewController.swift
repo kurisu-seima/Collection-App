@@ -20,17 +20,18 @@ class MemoCreateViewController: UIViewController {
     }
     
     @IBAction func memoCreateButtonDidTapped(_ sender: Any) {
-        let realm = try! Realm()
         let memo = Memo()
         memo.title = titleTextField.text ?? ""
         memo.content = contentTextView.text ?? ""
-        
-        try! realm.write {
-            realm.add(memo)
-        }
+        MemoManager.add(memo: memo)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonDidTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func closeKeyBoard(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }

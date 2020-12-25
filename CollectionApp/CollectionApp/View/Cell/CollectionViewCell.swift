@@ -17,9 +17,9 @@ class CollectionViewCell: UICollectionViewCell {
     
     var index: Int = 0
 
-    func setUp() {
-        collectionTitleLabel.text = "買うもの"
-        collectionSubtitleLabel.text = "テキストテキストテキストテキストテキストテキスト"
+    func setUp(index: Int) {
+        collectionTitleLabel.text = MemoManager.shared.memos[index].title
+        collectionSubtitleLabel.text = MemoManager.shared.memos[index].content
         collectionSubtitleLabel.numberOfLines = 0
         self.layer.cornerRadius = 6
         self.layer.borderWidth = 3

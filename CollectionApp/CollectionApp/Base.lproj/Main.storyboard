@@ -151,7 +151,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="350" id="4YA-nU-te0"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -202,6 +201,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rY5-vB-1ti"/>
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="E8p-7R-Vbp" firstAttribute="top" secondItem="rY5-vB-1ti" secondAttribute="top" constant="10" id="6bI-PB-A78"/>
                             <constraint firstItem="JOf-S2-a7W" firstAttribute="trailing" secondItem="rY5-vB-1ti" secondAttribute="trailing" id="CZ7-4j-7k1"/>
@@ -212,6 +212,9 @@
                             <constraint firstItem="A0S-h7-pIO" firstAttribute="top" secondItem="rY5-vB-1ti" secondAttribute="top" constant="20" id="lnh-M1-7co"/>
                             <constraint firstItem="JOf-S2-a7W" firstAttribute="top" secondItem="A0S-h7-pIO" secondAttribute="bottom" id="wiR-sv-IzW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xwH-gB-3Oa" appends="YES" id="Sxy-Gd-E9Q"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="cte-qk-GZQ" id="nuB-dO-VyM"/>
@@ -219,6 +222,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qe-RG-TPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xwH-gB-3Oa">
+                    <connections>
+                        <action selector="closeKeyBoard:" destination="SiL-B3-tun" id="1jh-XN-GZv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="129.91071428571428"/>
         </scene>

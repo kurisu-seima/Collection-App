@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3319217D2595CF08006802EB /* MemoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3319217C2595CF08006802EB /* MemoManager.swift */; };
 		33377AD5259384DB00492715 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33377AD4259384DB00492715 /* CustomUIButton.swift */; };
 		333ADB0425924CCA000A5395 /* MemoCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333ADB0325924CCA000A5395 /* MemoCreateViewController.swift */; };
 		333ADB2125926DF4000A5395 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333ADB2025926DF4000A5395 /* Memo.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3319217C2595CF08006802EB /* MemoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoManager.swift; sourceTree = "<group>"; };
 		33377AD4259384DB00492715 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		333ADB0325924CCA000A5395 /* MemoCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoCreateViewController.swift; path = ../View/MemoCreateViewController.swift; sourceTree = "<group>"; };
 		333ADB2025926DF4000A5395 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				333ADB2025926DF4000A5395 /* Memo.swift */,
+				3319217C2595CF08006802EB /* MemoManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				ECEA39AC25863E90004C639A /* CollectionViewController.swift in Sources */,
 				ECEA39952586378B004C639A /* AppDelegate.swift in Sources */,
 				ECEA39AE258651E7004C639A /* CollectionViewCell.swift in Sources */,
+				3319217D2595CF08006802EB /* MemoManager.swift in Sources */,
 				333ADB0425924CCA000A5395 /* MemoCreateViewController.swift in Sources */,
 				ECEA39972586378B004C639A /* SceneDelegate.swift in Sources */,
 			);

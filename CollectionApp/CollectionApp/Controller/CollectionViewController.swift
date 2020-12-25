@@ -19,6 +19,10 @@ class CollectionViewController: UIViewController {
         myCollectionView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        myCollectionView.reloadData()
+    }
+    
     @IBAction func createButtonDidTapped(_ sender: Any) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "memoCreateVC") as! MemoCreateViewController
         nextVC.modalPresentationStyle = .fullScreen
@@ -29,7 +33,7 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        cell.setUp()
+        cell.setUp(index: indexPath.row)
         return cell
     }
     
@@ -40,7 +44,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     
     //セルの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return MemoManager.shared.memos.count
     }
     
     //セルのサイズ

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CollectionViewController: UIViewController {
 
@@ -67,11 +68,11 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
 }
 
 extension CollectionViewController: CollectionViewCellDelegate {
-    func cellLongTapped(index: Int) {
+    func cellLongTapped(index: Int, id: String) {
         let alert = UIAlertController(title: "該当のメモを削除しますか？", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "はい", style: .default) { _ in
-            MemoManager.shared.remove(index: index)
-            self.myCollectionView.reloadData()
+            MemoManager.shared.remove(id: id)
+            self.myCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         })
         alert.addAction(UIAlertAction(title: "いいえ", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)

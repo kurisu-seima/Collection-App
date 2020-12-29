@@ -29,11 +29,11 @@ class MemoManager {
         }
     }
     
-    func remove(index: Int) {
-        let memo = memos[index]
+    func remove(id: String) {
         let realm = try! Realm()
+        let result = realm.objects(Memo.self).filter(NSPredicate(format: "id = %@", id))
         try! realm.write {
-            realm.delete(memo)
+            realm.delete(result)
         }
     }
 }

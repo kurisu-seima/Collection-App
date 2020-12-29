@@ -23,6 +23,7 @@ class MemoCreateViewController: UIViewController {
         let memo = Memo()
         memo.title = titleTextField.text ?? ""
         memo.content = contentTextView.text ?? ""
+        memo.id = NSUUID().uuidString
         MemoManager.shared.add(memo: memo)
         dismiss(animated: true, completion: nil)
     }

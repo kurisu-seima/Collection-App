@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CollectionViewCellDelegate {
-    func cellLongTapped(index: Int)
+    func cellLongTapped(index: Int, id: String)
 }
 
 class CollectionViewCell: UICollectionViewCell {
@@ -45,6 +45,6 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     @objc func longTap(_ sender: UILongPressGestureRecognizer) {
-        self.delegate?.cellLongTapped(index: index)
+        self.delegate?.cellLongTapped(index: index, id: MemoManager.shared.memos[index].id)
     }
 }

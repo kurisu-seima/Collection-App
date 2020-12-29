@@ -18,6 +18,9 @@ class CollectionViewController: UIViewController {
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+        myCollectionView.addGestureRecognizer(panGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +45,23 @@ class CollectionViewController: UIViewController {
         })
         alert.addAction(UIAlertAction(title: "いいえ", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func panGesture(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            guard let selectedIndexPath = myCollectionView.indexPathForItem(at: sender.location(in: myCollectionView)) else {
+                return
+            }
+            
+            myCollectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+            myCollectionView.updateInteractiveMovementTargetPosition(sender.location(in: sender.view!))
+        case .ended:
+            myCollectionView.endInteractiveMovement()
+        default:
+            myCollectionView.endInteractiveMovement()
+        }
     }
 }
 
@@ -80,5 +100,14 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     //セクションごとの余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
+    }
+    
+    //並び替え可能にする
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //並び替えの処理
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     }
 }

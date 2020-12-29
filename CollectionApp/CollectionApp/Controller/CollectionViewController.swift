@@ -29,13 +29,29 @@ class CollectionViewController: UIViewController {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
     }
+    
+    @objc func longTap(sender: UILongPressGestureRecognizer) {
+        guard let selectedIndexPath = myCollectionView.indexPathForItem(at: sender.location(in: myCollectionView)) else {
+            return
+        }
+
+        let alert = UIAlertController(title: "該当のメモを削除しますか？", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "はい", style: .default) { _ in
+            MemoManager.shared.remove(id: MemoManager.shared.memos[selectedIndexPath.row].id)
+            self.myCollectionView.deleteItems(at: [selectedIndexPath])
+        })
+        alert.addAction(UIAlertAction(title: "いいえ", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
+
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        cell.delegate = self
         cell.setUp(index: indexPath.row)
+        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(sender:)))
+        cell.addGestureRecognizer(longTapGesture)
         return cell
     }
     
@@ -64,17 +80,5 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     //セクションごとの余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
-    }
-}
-
-extension CollectionViewController: CollectionViewCellDelegate {
-    func cellLongTapped(index: Int, id: String) {
-        let alert = UIAlertController(title: "該当のメモを削除しますか？", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "はい", style: .default) { _ in
-            MemoManager.shared.remove(id: id)
-            self.myCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
-        })
-        alert.addAction(UIAlertAction(title: "いいえ", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }

@@ -33,6 +33,7 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        cell.delegate = self
         cell.setUp(index: indexPath.row)
         return cell
     }
@@ -62,5 +63,17 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     //セクションごとの余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
+    }
+}
+
+extension CollectionViewController: CollectionViewCellDelegate {
+    func cellLongTapped(index: Int) {
+        let alert = UIAlertController(title: "該当のメモを削除しますか？", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "はい", style: .default) { _ in
+            MemoManager.shared.remove(index: index)
+            self.myCollectionView.reloadData()
+        })
+        alert.addAction(UIAlertAction(title: "いいえ", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

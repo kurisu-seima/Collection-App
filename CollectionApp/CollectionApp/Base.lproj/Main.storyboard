@@ -61,6 +61,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <gestureRecognizers/>
                                         <size key="customSize" width="202" height="190"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">

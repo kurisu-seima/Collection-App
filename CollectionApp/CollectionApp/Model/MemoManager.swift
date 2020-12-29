@@ -28,6 +28,14 @@ class MemoManager {
             realm.add(memo)
         }
     }
+    
+    func remove(index: Int) {
+        let memo = memos[index]
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(memo)
+        }
+    }
 }
 
 

@@ -16,7 +16,7 @@ class MemoManager {
     private init() {
         memos = {
             let realm = try! Realm()
-           return realm.objects(Memo.self)
+            return realm.objects(Memo.self).sorted(byKeyPath: "order", ascending: true)
         }()
     }
     
@@ -36,6 +36,7 @@ class MemoManager {
             realm.delete(result)
         }
     }
+    
+    func move() {
+    }
 }
-
-

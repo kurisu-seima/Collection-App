@@ -24,6 +24,7 @@ class MemoCreateViewController: UIViewController {
         memo.title = titleTextField.text ?? ""
         memo.content = contentTextView.text ?? ""
         memo.id = NSUUID().uuidString
+        memo.order = MemoManager.shared.newOrder
         MemoManager.shared.add(memo: memo)
         dismiss(animated: true, completion: nil)
     }

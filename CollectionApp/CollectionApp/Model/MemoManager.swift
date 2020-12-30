@@ -22,6 +22,17 @@ class MemoManager {
     
     private (set) var memos: Results<Memo>!
     
+    var lastOrder: Int? {
+        memos.max(ofProperty: "order")
+    }
+    
+    var newOrder: Int {
+        guard  let lastOrder = lastOrder else {
+            return 0
+        }
+        return lastOrder + 1
+    }
+    
     func add(memo: Memo) {
         let realm = try! Realm()
         try! realm.write {
@@ -37,6 +48,13 @@ class MemoManager {
         }
     }
     
-    func move() {
+    func move(from: Int, to: Int) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            MemoManager.shared.memos[from].order = to
+            MemoManager.shared.memos[to].order = from
+            MemoManager.shared.memos = MemoManager.shared.memos.sorted(byKeyPath: "order", ascending: true)
+        }
     }
 }

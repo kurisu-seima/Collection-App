@@ -109,5 +109,6 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     
     //並び替えの処理
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        MemoManager.shared.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }

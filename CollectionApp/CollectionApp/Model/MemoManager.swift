@@ -48,13 +48,30 @@ class MemoManager {
         }
     }
     
-    func move(from: Int, to: Int) {
+    func move(sourceIndexPath: Int, destinationIndexPath: Int) {
         let realm = try! Realm()
         
         try! realm.write {
-            MemoManager.shared.memos[from].order = to
-            MemoManager.shared.memos[to].order = from
-            MemoManager.shared.memos = MemoManager.shared.memos.sorted(byKeyPath: "order", ascending: true)
+            let sourceMemo = MemoManager.shared.memos[sourceIndexPath]
+            let destinationMemo = MemoManager.shared.memos[destinationIndexPath]
+            
+            let destionationOrder = destinationMemo.order
+            
+            if sourceIndexPath < destinationIndexPath {
+                // 上から下に移動した場合、間の項目を上にシフト
+                for index in sourceIndexPath...destinationIndexPath {
+                    let memo = MemoManager.shared.memos[index]
+                    memo.order -= 1
+                }
+            } else {
+                // 下から上に移動した場合、間の項目を下にシフト
+                for index in (destinationIndexPath...sourceIndexPath).reversed() {
+                    let memo = MemoManager.shared.memos[index]
+                    memo.order += 1
+                }
+            }
+            // 移動したセルの並びを移動先に更新
+            sourceMemo.order = destionationOrder
         }
     }
 }
